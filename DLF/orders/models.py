@@ -5,5 +5,6 @@ class Orders(models.Model):
     Item = models.TextField()
     quantity = models.IntegerField(default= 0)
     Accepted = models.BooleanField(default=False)
+    Price = models.IntegerField(default = 0)
 
 

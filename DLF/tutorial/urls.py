@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from pages.views import home_view, orders_list
+from pages.views import home_view
+from orders.views import list_forms, delete_orders, list_the_orders
 
 urlpatterns = [
     path('', home_view),
-    path('orders/', orders_list),
     path('admin/', admin.site.urls),
+    path('orders/form', list_forms),
+    path('orders/<int:order_id>/delete', delete_orders),
+    path('allorders/', list_the_orders)
+
 ]
